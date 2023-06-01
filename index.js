@@ -1,33 +1,31 @@
 const popup = document.querySelector('.popup');
-const popupOpen = document.querySelector('.popup_opened');
+const profileName = document.querySelector('.profile__name');
+const profileProfession = document.querySelector('.profile__profession');
 const close = document.querySelector('.popup__container_close-icon');
 const buttclick = document.querySelector('.profile__edit-button');
-const saveButton = document.querySelector('popup__container_submit-button.classList');
-
-
+const saveButton = document.querySelector('.popup__container_submit-button');
+let formElement = document.querySelector('.popup__container');
+let nameInput = document.querySelector('.popup__container_field-name[name="name"]');
+let jobInput = document.querySelector('.popup__container_field-profession[name="profession"]');
 
 buttclick.addEventListener('click', function () {
-    popup.classList.add('popup_opened');
+  popup.classList.add('popup_opened');
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileProfession.textContent;
 });
 
 close.addEventListener('click', function () {
-    popup.classList.remove('popup_opened');
+  popup.classList.remove('popup_opened');
 });
 
-let formElement = document.querySelector('popup__container');
-let nameInput = document.querySelector('popup__container_field-profession');
-let jobInput = document.querySelector('popup__container_field-profession');
+saveButton.addEventListener('click', function () {
+  popup.classList.remove('popup_opened');
+});
 
-function handleFormSubmit (evt) {
-    evt.preventDefault();
-    document.querySelector('nameInput').textContent = profile__name.value;
-    document.querySelector('jobInput').textContent = profile__profession.value;
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileProfession.textContent = jobInput.value;
 };
 
-close.addEventListener('click', function () {
-    popup__container_submit-button.classList.remove('popup_opened');
-});
-    
-
-formElement.addEventListener('popup__container_submit-button', handleFormSubmit);
-
+formElement.addEventListener('submit', handleFormSubmit);
