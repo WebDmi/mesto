@@ -1,0 +1,24 @@
+.element__group {
+  background-image: url(../../../images/Group.svg);
+  width: 22px;
+  height: 19px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  border: 0;
+  padding: 0;
+  margin-right: 5px;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.element__group:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.element__group:active {
+  color: #000000;
+  background-image: url(../../../images/Group-active.svg);
+  opacity: 1;
+}

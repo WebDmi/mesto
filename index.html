@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img class="header__logo" src="./images/Logo.svg" alt="Лого Mesto" />
+      </header>
+      <main class="main">
+        <section class="profile">
+          <img
+            class="profile__avatar"
+            src="./images/image.svg"
+            alt="фото Жак-Ив Кусто"
+          />
+          <div class="profile__info">
+            <div class="profile__edit">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <p class="profile__profession">Исследователь океана</p>
+            </div>
+            <button class="profile__edit-button" type="button"></button>
+          </div>
+          <button class="profile__add-button" type="button"></button>
+        </section>
+        <section class="elements">
+          <ul class="elements__places">
+            <li class="element">
+              <img
+                class="element__mask-group"
+                src="./images/kirill-pershin-1.jpg"
+              />
+              <div class="element__place">
+                <h3 class="element__place_name">Карачаевск</h3>
+                <button class="element__group"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img
+                class="element__mask-group"
+                src="./images/kirill-pershin-2.jpg"
+              />
+              <div class="element__place">
+                <h3 class="element__place_name">Гора Эльбрус</h3>
+                <button class="element__group"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img
+                class="element__mask-group"
+                src="./images/kirill-pershin-3.jpg"
+              />
+              <div class="element__place">
+                <h3 class="element__place_name">Домбай</h3>
+                <button class="element__group"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img
+                class="element__mask-group"
+                src="./images/kirill-pershin-4.jpg"
+              />
+              <div class="element__place">
+                <h3 class="element__place_name">Гора Эльбрус</h3>
+                <button class="element__group"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img
+                class="element__mask-group"
+                src="./images/kirill-pershin-5.jpg"
+              />
+              <div class="element__place">
+                <h3 class="element__place_name">Домбай</h3>
+                <button class="element__group"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img
+                class="element__mask-group"
+                src="./images/kirill-pershin-6.jpg"
+              />
+              <div class="element__place">
+                <h3 class="element__place_name">Карачаево-Черкессия</h3>
+                <button class="element__group"></button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+      </footer>
+      <div class="popup">
+        <form  class="popup__container" name="profileForm">
+          <button class="popup__container_close-icon" type="button"></button>
+          <h2 class="popup__container_title">Редактировать профиль</h2>
+          <input class="popup__container_field-name" />
+          <input class="popup__container_field-profession" />
+          <button class="popup__container_submit-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>
