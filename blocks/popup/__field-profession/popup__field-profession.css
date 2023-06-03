@@ -1,4 +1,4 @@
-.popup__container_field-profession {
+.popup__field-profession {
   width: 358px;
   height: 14px;
   margin: 30px 0 0 36px;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 619px) {
-  .popup__container_field-profession {
+  .popup__field-profession {
     width: 238px;
     align-self: center;
     margin: 30px 0 0;
