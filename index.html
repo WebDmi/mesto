@@ -23,9 +23,17 @@
               <h1 class="profile__name">Жак-Ив Кусто</h1>
               <p class="profile__profession">Исследователь океана</p>
             </div>
-            <button class="profile__edit-button" type="button"></button>
+            <button
+              class="profile__edit-button"
+              type="button"
+              aria-label="Редарктировать профиль"
+            ></button>
           </div>
-          <button class="profile__add-button" type="button"></button>
+          <button
+            class="profile__add-button"
+            type="button"
+            aria-label="Добавить"
+          ></button>
         </section>
         <section class="elements">
           <ul class="elements__places">
@@ -33,9 +41,10 @@
               <img
                 class="element__mask-group"
                 src="./images/kirill-pershin-1.jpg"
+                alt="Крепость"
               />
               <div class="element__place">
-                <h3 class="element__name">Карачаевск</h3>
+                <h2 class="element__name">Карачаевск</h2>
                 <button class="element__group"></button>
               </div>
             </li>
@@ -43,9 +52,10 @@
               <img
                 class="element__mask-group"
                 src="./images/kirill-pershin-2.jpg"
+                alt="Эльбрус"
               />
               <div class="element__place">
-                <h3 class="element__name">Гора Эльбрус</h3>
+                <h2 class="element__name">Гора Эльбрус</h2>
                 <button class="element__group"></button>
               </div>
             </li>
@@ -53,9 +63,10 @@
               <img
                 class="element__mask-group"
                 src="./images/kirill-pershin-3.jpg"
+                alt="Домбай на закате"
               />
               <div class="element__place">
-                <h3 class="element__name">Домбай</h3>
+                <h2 class="element__name">Домбай</h2>
                 <button class="element__group"></button>
               </div>
             </li>
@@ -63,9 +74,10 @@
               <img
                 class="element__mask-group"
                 src="./images/kirill-pershin-4.jpg"
+                alt="Эльбрус"
               />
               <div class="element__place">
-                <h3 class="element__name">Гора Эльбрус</h3>
+                <h2 class="element__name">Гора Эльбрус</h2>
                 <button class="element__group"></button>
               </div>
             </li>
@@ -73,9 +85,10 @@
               <img
                 class="element__mask-group"
                 src="./images/kirill-pershin-5.jpg"
+                alt="Домбай на закате"
               />
               <div class="element__place">
-                <h3 class="element__name">Домбай</h3>
+                <h2 class="element__name">Домбай</h2>
                 <button class="element__group"></button>
               </div>
             </li>
@@ -83,9 +96,10 @@
               <img
                 class="element__mask-group"
                 src="./images/kirill-pershin-6.jpg"
+                alt="Крепость"
               />
               <div class="element__place">
-                <h3 class="element__name">Карачаево-Черкессия</h3>
+                <h2 class="element__name">Карачаево-Черкессия</h2>
                 <button class="element__group"></button>
               </div>
             </li>
@@ -96,15 +110,23 @@
         <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
       </footer>
       <div class="popup">
-        <form  class="popup__container" name="profileForm">
-          <button class="popup__close-icon" type="button"></button>
+        <div class="popup__container">
+          <button
+            class="popup__close-icon"
+            type="button"
+            aria-label="Закрыть"
+          ></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input class="popup__field-name" />
-          <input class="popup__field-profession" />
-          <button class="popup__submit-button">Сохранить</button>
-        </form>
+          <form class="popup__form" name="profileForm">
+            <input class="popup__field-name" name="name" />
+            <input class="popup__field-profession" name="profession" />
+            <button class="popup__submit-button" aria-label="Сохранить" type="submit">
+              Сохранить
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-    <script src="./index.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

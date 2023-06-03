@@ -1,17 +1,12 @@
 .popup__field-profession {
-  width: 358px;
+  width: 100%;
   height: 14px;
-  margin: 30px 0 0 36px;
+  margin: 30px 0 0;
   padding: 0 0 12px 0;
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   align-self: flex-start;
-}
-
-@media screen and (min-width: 320px) and (max-width: 619px) {
-  .popup__field-profession {
-    width: 238px;
-    align-self: center;
-    margin: 30px 0 0;
-  }
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
