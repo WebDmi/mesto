@@ -40,5 +40,6 @@
     position: absolute;
     margin-top: 9px;
     right: 40px;
+    background-image: url(../../../images/Button-pen-mobile.svg);
   }
 }
