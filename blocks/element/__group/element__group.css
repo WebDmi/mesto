@@ -16,9 +16,3 @@
   opacity: 0.5;
   cursor: pointer;
 }
-
-.element__group:active {
-  color: #000000;
-  background-image: url(../../../images/Group-active.svg);
-  opacity: 1;
-}
