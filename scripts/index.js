@@ -1,31 +1,5 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
-const popup = document.querySelector('popup');
+const popupOpened = document.querySelector('.popup_opened');
 const popupProfile = document.querySelector('.popup-profile');
 const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
@@ -51,14 +25,29 @@ const templateElement = document.querySelector('#element-template').content.quer
 const placePhoto = templateElement.querySelector('.element__mask-group');
 const placeName = templateElement.querySelector('.element__name');
 
-
+// функция открытия попапа
 function openPopup(popup) {
   popup.classList.add('popup_opened');
 };
 
+// функция закрытия попапа
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 };
+
+function closeOverlay(evt) {
+  if (
+    evt.currentTarget === evt.target ||
+    evt.target.classList.contains('.popup__close-icon')
+  ) {
+    closePopup(evt.currentTarget);
+  }
+};
+
+popupProfile.addEventListener('click', closeOverlay);
+popupPlace.addEventListener('click', closeOverlay);
+popupPhoto.addEventListener('click', closeOverlay);
+
 
 // открытие попапа профиля
 buttonEdit.addEventListener('click', () => {
@@ -108,7 +97,7 @@ function createPlaceCard({ name, link }) {
   const placePhoto = cardPlace.querySelector('.element__mask-group');
   placeName.textContent = name;
   placePhoto.src = link;
-  placeName.textContent = name;
+  placeName.alt = name;
 
   // удаление карточек
   const deleteButtonCard = cardPlace.querySelector('.element__trash');
@@ -126,6 +115,7 @@ function createPlaceCard({ name, link }) {
   placePhoto.addEventListener('click', () => {
     openPopup(popupPhoto);
     imagePopupPhoto.src = link;
+    namePopupPhoto.alt = name;
     namePopupPhoto.textContent = name;
   });
 
