@@ -88,6 +88,7 @@ formPlaceElement.addEventListener('submit', function (evt) {
   const nameNewPlace = namePopupPlace.value;
   renderInitialCard({ name: nameNewPlace, link: imageNewPlace }, elementsPlace);
   closePopup(popupPlace);
+  evt.target.reset();
 });
 
 // отображение карточек из массива
