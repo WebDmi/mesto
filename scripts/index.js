@@ -4,17 +4,14 @@ const closeButton = document.querySelector('.popup__close-icon');
 const popupProfile = document.querySelector('.popup-profile');
 const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
-// const closeButtonProfile = popupProfile.querySelector('.popup__close-icon');
 const buttonEdit = document.querySelector('.profile__edit-button');
 const popupPlace = document.querySelector('.popup-place');
 const namePopupPlace = popupPlace.querySelector('.popup-place__field-place');
 const imagePopupPlace = popupPlace.querySelector('.popup-place__field-photo');
 const buttonAdd = document.querySelector('.profile__add-button');
-// const closeButtonPlace = popupPlace.querySelector('.popup__close-icon');
 const popupPhoto = document.querySelector('.popup-photo');
 const imagePopupPhoto = popupPhoto.querySelector('.popup-photo__image');
 const namePopupPhoto = popupPhoto.querySelector('.popup-photo__name');
-// const closeButtonPhoto = popupPhoto.querySelector('.popup__close-icon');
 
 const formProfileElement = document.querySelector('.popup-profile__container');
 const formPlaceElement = document.querySelector('.popup-place__container')
@@ -39,8 +36,8 @@ function closePopup(popup) {
 function closeOverlay(evt) {
   if (
     evt.currentTarget === evt.target ||
-    evt.target.classList.contains('.popup__close-icon')
-  ); {
+    evt.target.classList.contains('popup__close-icon')
+  ) {
     closePopup(evt.currentTarget);
   }
 };
@@ -62,6 +59,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileProfession.textContent = jobInput.value;
+  closePopup(popupProfile);
 };
 
 formProfileElement.addEventListener('submit', handleProfileFormSubmit);
