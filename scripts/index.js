@@ -42,10 +42,9 @@ function closeOverlay(evt) {
   }
 };
 
-popupProfile.addEventListener('click', closeOverlay);
-popupPlace.addEventListener('click', closeOverlay);
-popupPhoto.addEventListener('click', closeOverlay);
-
+document.querySelectorAll('.popup').forEach( popup => {
+  popup.addEventListener('mousedown', closeOverlay);
+});
 
 // открытие попапа профиля
 buttonEdit.addEventListener('click', () => {
