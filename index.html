@@ -50,23 +50,30 @@
             aria-label="Закрыть"
           ></button>
           <h2 class="popup-profile__title">Редактировать профиль</h2>
+
           <form class="popup-profile__form" name="profileForm">
-            <input
-              class="popup-profile__field-name"
-              name="name"
-              minlength="2"
-              maxlength="40"
-              required
-            />
-            <span class="">Необходимо заполнить данное поле</span>
-            <input
-              class="popup-profile__field-profession"
-              name="profession"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <span class="">Необходимо заполнить данное поле</span>
+            <label class="popup__form-field">
+              <input
+                class="popup-profile__field-name"
+                name="name"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="popup__error-item"></span>
+            </label>
+
+            <label class="popup__form-field">
+              <input
+                class="popup-profile__field-profession"
+                name="profession"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span class="popup__error-item"></span>
+            </label>
+
             <button
               class="popup__submit-button"
               aria-label="Сохранить"
@@ -86,22 +93,29 @@
           ></button>
           <h2 class="popup-place__title">Новое место</h2>
           <form class="popup-place__form" name="placeForm">
-            <input
-              class="popup-place__field-place"
-              placeholder="Название"
-              name=""
-              minlength="1"
-              maxlength="30"
-              required
-            />
-            <input
-              class="popup-place__field-photo"
-              placeholder="Ссылка на картинку"
-              type="url"
-              name=""
-              minlength="1"
-              required
-            />
+            <label class="popup__form-field">
+              <input
+                class="popup-place__field-place"
+                placeholder="Название"
+                name=""
+                minlength="1"
+                maxlength="30"
+                required
+              />
+              <span class="popup__error-item"></span>
+            </label>
+
+            <label class="popup__form-field">
+              <input
+                class="popup-place__field-photo"
+                placeholder="Ссылка на картинку"
+                type="url"
+                name=""
+                required
+              />
+              <span class="popup__error-item"></span>
+            </label>
+
             <button
               class="popup__submit-button"
               aria-label="Сохранить"

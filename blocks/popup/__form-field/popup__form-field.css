@@ -1,0 +1,7 @@
+.popup__form-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 44px;
+    margin-top: 13px;
+}

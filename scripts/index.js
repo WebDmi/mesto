@@ -42,22 +42,18 @@ function closeOverlay(evt) {
   }
 };
 
+// закрытие попапа черех иконку-крестик
 document.querySelectorAll('.popup').forEach( popup => {
   popup.addEventListener('mousedown', closeOverlay);
 });
 
+// закрытие попапа через Esc
 document.addEventListener('keydown', function (evt) {
   if(evt.key === 'Escape') {
-    const openPopup = document.querySelector('.popup_opened')
+    const openPopup = document.querySelector('.popup_opened');
     closePopup(openPopup);
   }
 });
-
-// function closeEsc (evt) {
-//   if (evt.key === "Escape") {
-//     closePopup(evt);
-//   }
-// };
 
 // открытие попапа профиля
 buttonEdit.addEventListener('click', () => {
