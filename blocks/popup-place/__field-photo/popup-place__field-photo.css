@@ -10,8 +10,3 @@
   font-size: 14px;
   line-height: 17px;
 }
-
-
-.popup-place__field-photo:invalid {
-  border-bottom: 1px solid #f00;
-}

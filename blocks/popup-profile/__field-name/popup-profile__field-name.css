@@ -10,6 +10,6 @@
   line-height: 17px;
 }
 
-.popup-profile__field-name:invalid {
+/* .popup-profile__field-name:invalid {
   border-bottom: 1px solid #f00;
-}
+} */

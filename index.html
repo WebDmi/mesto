@@ -51,27 +51,27 @@
           ></button>
           <h2 class="popup-profile__title">Редактировать профиль</h2>
 
-          <form class="popup-profile__form" name="profileForm">
-            <label class="popup__form-field">
+          <form class="popup-profile__form" name="profileForm" novalidate>
+            <label class="popup__form-field form">
               <input
-                class="popup-profile__field-name"
+                class="popup-profile__field-name input form__input"
                 name="name"
                 minlength="2"
                 maxlength="40"
                 required
               />
-              <span class="popup__error-item"></span>
+              <span id="name-error" class="error"></span>
             </label>
 
-            <label class="popup__form-field">
+            <label class="popup__form-field form">
               <input
-                class="popup-profile__field-profession"
+                class="popup-profile__field-profession input form__input"
                 name="profession"
                 minlength="2"
                 maxlength="200"
                 required
               />
-              <span class="popup__error-item"></span>
+              <span id="profession-error" class="error"></span>
             </label>
 
             <button
@@ -92,28 +92,28 @@
             aria-label="Закрыть"
           ></button>
           <h2 class="popup-place__title">Новое место</h2>
-          <form class="popup-place__form" name="placeForm">
-            <label class="popup__form-field">
+          <form class="popup-place__form" name="placeForm" novalidate>
+            <label class="popup__form-field form">
               <input
-                class="popup-place__field-place"
+                class="popup-place__field-place input form__input"
                 placeholder="Название"
-                name=""
+                name="place"
                 minlength="1"
                 maxlength="30"
                 required
               />
-              <span class="popup__error-item"></span>
+              <span id="place-error" class="error"></span>
             </label>
 
-            <label class="popup__form-field">
+            <label class="popup__form-field form">
               <input
-                class="popup-place__field-photo"
+                class="popup-place__field-photo input form__input"
                 placeholder="Ссылка на картинку"
                 type="url"
-                name=""
+                name="photo"
                 required
               />
-              <span class="popup__error-item"></span>
+              <span id="photo-error" class="error"></span>
             </label>
 
             <button
@@ -121,7 +121,7 @@
               aria-label="Сохранить"
               type="submit"
             >
-              Сохранить
+              Создать
             </button>
           </form>
         </div>
@@ -150,5 +150,6 @@
     </template>
     <script src="./scripts/cards.js" defer></script>
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
   </body>
 </html>

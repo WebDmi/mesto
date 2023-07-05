@@ -1,27 +1,26 @@
 
 const popupOpened = document.querySelector('.popup_opened');
-const closeButton = document.querySelector('.popup__close-icon');
 const popupProfile = document.querySelector('.popup-profile');
 const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
 const buttonEdit = document.querySelector('.profile__edit-button');
 const popupPlace = document.querySelector('.popup-place');
-const namePopupPlace = popupPlace.querySelector('.popup-place__field-place');
-const imagePopupPlace = popupPlace.querySelector('.popup-place__field-photo');
 const buttonAdd = document.querySelector('.profile__add-button');
 const popupPhoto = document.querySelector('.popup-photo');
 const imagePopupPhoto = popupPhoto.querySelector('.popup-photo__image');
 const namePopupPhoto = popupPhoto.querySelector('.popup-photo__name');
-
-const formProfileElement = document.querySelector('.popup-profile__container');
-const formPlaceElement = document.querySelector('.popup-place__container')
-const nameInput = formProfileElement.querySelector('.popup-profile__field-name');
-const jobInput = formProfileElement.querySelector('.popup-profile__field-profession');
-
 const elementsPlace = document.querySelector('.elements__places');
 const templateElement = document.querySelector('#element-template').content.querySelector('.element');
 const placePhoto = templateElement.querySelector('.element__mask-group');
 const placeName = templateElement.querySelector('.element__name');
+
+const formProfile = document.querySelector('.popup-profile__container');
+const nameInput = formProfile.querySelector('.popup-profile__field-name');
+const jobInput = formProfile.querySelector('.popup-profile__field-profession');
+
+const formPlace = document.querySelector('.popup-place__container');
+const namePlace = formPlace.querySelector('.popup-place__field-place');
+const imagePlace = formPlace.querySelector('.popup-place__field-photo');
 
 // функция открытия попапа
 function openPopup(popup) {
@@ -70,7 +69,7 @@ function handleProfileFormSubmit(evt) {
   closePopup(popupProfile);
 };
 
-formProfileElement.addEventListener('submit', handleProfileFormSubmit);
+formProfile.addEventListener('submit', handleProfileFormSubmit);
 
 // открытие попапа места
 buttonAdd.addEventListener('click', () => {
@@ -78,10 +77,10 @@ buttonAdd.addEventListener('click', () => {
 });
 
 // создание карточек
-formPlaceElement.addEventListener('submit', function (evt) {
+formPlace.addEventListener('submit', function (evt) {
   evt.preventDefault();
-  const imageNewPlace = imagePopupPlace.value;
-  const nameNewPlace = namePopupPlace.value;
+  const imageNewPlace = imagePlace.value;
+  const nameNewPlace = namePlace.value;
   renderInitialCard({ name: nameNewPlace, link: imageNewPlace }, elementsPlace);
   closePopup(popupPlace);
   evt.target.reset();
