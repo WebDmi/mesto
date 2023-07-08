@@ -51,8 +51,8 @@
           ></button>
           <h2 class="popup-profile__title">Редактировать профиль</h2>
 
-          <form class="popup-profile__form" name="profileForm" novalidate>
-            <label class="popup__form-field form">
+          <form class="popup-profile__form form" name="profileForm" novalidate>
+            <label class="popup__form-field">
               <input
                 class="popup-profile__field-name input form__input"
                 name="profile-name"
@@ -63,7 +63,7 @@
               <span id="profile-name-error" class="error"></span>
             </label>
 
-            <label class="popup__form-field form">
+            <label class="popup__form-field">
               <input
                 class="popup-profile__field-profession input form__input"
                 name="profession"
@@ -92,20 +92,20 @@
             aria-label="Закрыть"
           ></button>
           <h2 class="popup-place__title">Новое место</h2>
-          <form class="popup-place__form" name="placeForm" novalidate>
-            <label class="popup__form-field form">
+          <form class="popup-place__form form" name="placeForm" novalidate>
+            <label class="popup__form-field">
               <input
                 class="popup-place__field-place input form__input"
                 placeholder="Название"
                 name="place"
-                minlength="1"
+                minlength="2"
                 maxlength="30"
                 required
               />
               <span id="place-error" class="error"></span>
             </label>
 
-            <label class="popup__form-field form">
+            <label class="popup__form-field">
               <input
                 class="popup-place__field-photo input form__input"
                 placeholder="Ссылка на картинку"
@@ -149,7 +149,7 @@
       </li>
     </template>
     <script src="./scripts/cards.js" defer></script>
-    <script src="./scripts/index.js" defer></script>
     <script src="./scripts/validation.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
   </body>
 </html>

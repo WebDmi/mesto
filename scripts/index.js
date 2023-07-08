@@ -5,6 +5,7 @@ const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
 const buttonEdit = document.querySelector('.profile__edit-button');
 const popupPlace = document.querySelector('.popup-place');
+const buttonSavePlace = popupPlace.querySelector('.popup__submit-button');
 const buttonAdd = document.querySelector('.profile__add-button');
 const popupPhoto = document.querySelector('.popup-photo');
 const imagePopupPhoto = popupPhoto.querySelector('.popup-photo__image');
@@ -25,11 +26,13 @@ const imagePlace = formPlace.querySelector('.popup-place__field-photo');
 // функция открытия попапа
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
 };
 
 // функция закрытия попапа
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEsc);
 };
 
 function closeOverlay(evt) {
@@ -42,17 +45,17 @@ function closeOverlay(evt) {
 };
 
 // закрытие попапа черех иконку-крестик
-document.querySelectorAll('.popup').forEach( popup => {
+document.querySelectorAll('.popup').forEach(popup => {
   popup.addEventListener('mousedown', closeOverlay);
 });
 
 // закрытие попапа через Esc
-document.addEventListener('keydown', function (evt) {
+function closePopupEsc(evt){
   if(evt.key === 'Escape') {
     const openPopup = document.querySelector('.popup_opened');
     closePopup(openPopup);
   }
-});
+};
 
 // открытие попапа профиля
 buttonEdit.addEventListener('click', () => {
@@ -73,6 +76,7 @@ formProfile.addEventListener('submit', handleProfileFormSubmit);
 
 // открытие попапа места
 buttonAdd.addEventListener('click', () => {
+  disableButton(buttonSavePlace, config);
   openPopup(popupPlace);
 });
 
